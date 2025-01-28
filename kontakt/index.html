@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8"/><title>Start | Kontakt</title>
+
+    <meta name="description" content="">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://niedersachsen-bezahlkarte-nein.github.io/rss.xml">
+    
+
+    
+<link rel="stylesheet" type="text/css" href="/css/form.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="generator" content="Zola 0.16"/> 
+    <link rel="stylesheet" type="text/css" href="/combine.css"/>
+    <link rel="stylesheet" type="text/css" href="/custom.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/photoswipe.css"/>
+
+    <link rel="canonical" href="https://niedersachsen-bezahlkarte-nein.github.io/kontakt/"/>
+</head>
+
+<body>
+    
+<div class="hero row center" style="background-color: #1B317A; min-height: 30vh;">
+    <img src="/img/banner-with-website.svg" style="height: 160px;" />
+</div>
+
+    <nav class="">
+    <a href="https://niedersachsen-bezahlkarte-nein.github.io" class="item "><div>Start</div></a>
+    
+    <a href="https:&#x2F;&#x2F;niedersachsen-bezahlkarte-nein.github.io&#x2F;kontakt&#x2F;" class="item active"><div>Kontakt</div></a>
+    <div class="dropdown">
+        <a href="https:&#x2F;&#x2F;niedersachsen-bezahlkarte-nein.github.io&#x2F;Umtauschaktionen&#x2F;" class="dropper">Umtauschaktionen
+<svg width="24px" height="24px" viewBox="0 0 24 24" fill="white" >
+<path d="M6.1018 8C5.02785 8 4.45387 9.2649 5.16108 10.0731L10.6829 16.3838C11.3801 17.1806 12.6197 17.1806 13.3169 16.3838L18.8388 10.0731C19.5459 9.2649 18.972 8 17.898 8H6.1018Z"/>
+</svg>
+</a>
+        <div class="dropdown-content"><a href="https:&#x2F;&#x2F;niedersachsen-bezahlkarte-nein.github.io&#x2F;Umtauschaktionen&#x2F;hannover&#x2F;"><span>Hannover</span></a>
+            
+        </div>
+      </div>
+    
+  
+</nav>
+    
+<main>
+    <div class="page">
+        <div class="col center">
+            <div style="max-width: min(800px, 95vw); font-size: larger;">
+                <h2 class="center">Kontaktpunkte</h2>
+                <p>Pressekontakt: <a href="mailto:niedersachsen.neinzurbezahlkarte@protonmail.com">niedersachsen.neinzurbezahlkarte@protonmail.com</a>.</p>
+            </div>
+
+            <div class="row center contact-links">
+                <style>
+                    .contact-links a { margin: 0 1em }
+                    .contact-links { margin: 1em 0 6em 0 }
+                </style>
+                <a target="_blank" class="button button-main" href="https://www.instagram.com/neinzurbezahlkartehannover/">Instagram</a>
+            </div>
+        </div>
+
+        <!-- <form> -->
+            
+        <div class="form">
+            <h2 class="center">Mail form</h2>
+            <label for="pseudo">Name or pseudo</label>
+            <input type="text" id="pseudo" name="pseudo" placeholder="Your name or pseudo...">
+
+            <label for="email">Email address</label>
+            <input type="text" id="email" name="email" placeholder="Your email address ...">
+
+            <label for="type">Type</label>
+            <select id="type" name="type">
+                <option value="Other">Other</option>
+                <option value="Question">Question</option>
+                <option value="Suggestion">Suggestion</option>
+            </select>
+
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="[seagull] about...">
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Your message..." style="height:200px"></textarea>
+
+            <div class="row center">
+                <input class="button button-main" type="submit" value="Send" onclick="submit()">
+            </div>
+        </div>
+
+        <!-- </form> -->
+
+        <script>
+            // define constants
+            const FIELDS = ["pseudo", "email", "type", "subject", "message"]
+            const TARGET_EMAIL = "niedersachsen.neinzurbezahlkarte@protonmail.com"
+            const TEMPLATE = (form) => `through web form\n\nType: ${form.type}\nEmail: ${form.email}\nPseudo: ${form.pseudo}\nMessage:\n\n${form.message}\n`
+
+            // get form content
+            function getForm() {
+                let form = {}
+                FIELDS.map(f => {
+                    form[f] = document.getElementById(f).value
+                })
+                return form
+            }
+
+            // build email body
+            function buildBody(form) {
+                form.body = encodeURIComponent(TEMPLATE(form))
+            }
+
+            // "submit" callback (open mailto: link)
+            function submit() {
+                let form = getForm()
+                buildBody(form)
+                let url = `mailto:${TARGET_EMAIL}?subject=${form.subject}&body=${form.body}`
+                console.log(url)
+                document.location.href = url
+            }
+        </script>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+    </div>
+
+</main>
+
+    <footer>
+    <div class="social"><a rel="me" href="https:&#x2F;&#x2F;www.instagram.com&#x2F;neinzurbezahlkartehannover&#x2F;"><div><img alt="Instagram" class="icon" src="https:&#x2F;&#x2F;cdn.simpleicons.org&#x2F;instagram&#x2F;FFF"/> <span>Instagram</span></div></a>
+        </div>
+
+    <div>
+        <div><a href="https:&#x2F;&#x2F;niedersachsen-bezahlkarte-nein.github.io&#x2F;kontakt&#x2F;">Kontakt</a></div>
+    </div>
+</footer>
+</body>
+
+</html>
